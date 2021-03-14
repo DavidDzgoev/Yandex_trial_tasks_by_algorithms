@@ -24,30 +24,31 @@ def main():
         row_bot_limit = central_index + 1
         row_top_limit = central_index - 1
 
-        for j in range(int((row_and_columns + 1) / 2)):
+        for circle in range(int((row_and_columns + 1) / 2)):
 
-            for i in range(int(current[1] - row_top_limit)):
+            for up in range(int(current[1] - row_top_limit)):
                 print(mat[int(current[0] + row_and_columns * current[1])])
                 current[1] -= 1
 
             row_top_limit -= 1
 
+            # end check
             if current == [0, -1]:
                 break
 
-            for i in range(int(column_top_limit - current[0])):
+            for right in range(int(column_top_limit - current[0])):
                 print(mat[int(current[0] + row_and_columns * current[1])])
                 current[0] += 1
 
             column_top_limit += 1
 
-            for i in range(row_bot_limit - current[1]):
+            for down in range(row_bot_limit - current[1]):
                 print(mat[int(current[0] + row_and_columns * current[1])])
                 current[1] += 1
 
             row_bot_limit += 1
 
-            for i in range(current[0] - column_bot_limit):
+            for left in range(current[0] - column_bot_limit):
                 print(mat[int(current[0] + row_and_columns * current[1])])
                 current[0] -= 1
 
