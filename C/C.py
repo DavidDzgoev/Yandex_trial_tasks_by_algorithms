@@ -5,8 +5,10 @@ def main():
 
     active_users_as_string = input()
     active_users = [int(i) for i in active_users_as_string.split(' ')]
+
     if len(active_users) != users_number - 2:
         return
+
     active_users = set(active_users)
     all_ids = set(range(1, users_number + 1))
 
